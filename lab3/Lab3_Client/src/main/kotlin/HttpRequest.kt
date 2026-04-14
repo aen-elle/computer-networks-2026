@@ -1,4 +1,5 @@
 package org.example
 
-class HttpRequest {
+class HttpRequest(val fileName: String) {
+
 }
