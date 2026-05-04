@@ -17,6 +17,7 @@ dependencies {
     implementation("io.ktor:ktor-server-html-builder")
     implementation("io.ktor:ktor-server-netty")
     implementation("io.ktor:ktor-server-core")
+
     testImplementation(kotlin("test"))
 }
 
