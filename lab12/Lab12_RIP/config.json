@@ -1,0 +1,38 @@
+{
+  "routers": [
+    {
+      "routerIp": "10.0.1.1",
+      "factualIp": "127.0.0.1",
+      "port": 5201,
+      "neighbours": [
+        { "routerIp": "10.0.1.2", "factualIp": "127.0.0.1", "port": 5202 }
+      ]
+    },
+    {
+      "routerIp": "10.0.1.2",
+      "factualIp": "127.0.0.1",
+      "port": 5202,
+      "neighbours": [
+        { "routerIp": "10.0.1.1", "factualIp": "127.0.0.1", "port": 5201 },
+        { "routerIp": "10.0.1.3", "factualIp": "127.0.0.1", "port": 5203 }
+      ]
+    },
+    {
+      "routerIp": "10.0.1.3",
+      "factualIp": "127.0.0.1",
+      "port": 5203,
+      "neighbours": [
+        { "routerIp": "10.0.1.2", "factualIp": "127.0.0.1", "port": 5202 },
+        { "routerIp": "10.0.1.4", "factualIp": "127.0.0.1", "port": 5204 }
+      ]
+    },
+    {
+      "routerIp": "10.0.1.4",
+      "factualIp": "127.0.0.1",
+      "port": 5204,
+      "neighbours": [
+        { "routerIp": "10.0.1.3", "factualIp": "127.0.0.1", "port": 5203 }
+      ]
+    }
+  ]
+}
