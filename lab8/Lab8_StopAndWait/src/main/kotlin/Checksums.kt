@@ -31,3 +31,22 @@ fun verifyChecksum(data: ByteArray, receivedChecksum: Int): Boolean {
     sum += receivedChecksum
     return (sum and 0xFFFF) == 0xFFFF
 }
+
+fun testChecksum() {
+    logger.info { "=== Testing checksums ===" }
+
+    val message = "Hello, StopAndWait!".toByteArray()
+    val checksum = calcCheckSum(message)
+    val isValid = verifyChecksum(message, checksum)
+    logger.info { "1. Valid message: $isValid (expected true)" }
+
+    val corrupted = message.copyOf()
+    if (corrupted.isNotEmpty()) corrupted[0] = (corrupted[0].toInt() xor 1).toByte()
+    val isValidCorrupted = verifyChecksum(corrupted, checksum)
+    logger.info { "2. Corrupted message: $isValidCorrupted (expected false)" }
+
+    val empty = ByteArray(0)
+    val emptyChecksum = calcCheckSum(empty)
+    val isValidEmpty = verifyChecksum(empty, emptyChecksum)
+    logger.info { "3. Empty message: $isValidEmpty (expected true)" }
+}

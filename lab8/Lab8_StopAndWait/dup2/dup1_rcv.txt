@@ -1,0 +1,1 @@
+This is hello from the first duplex peer! We must see it in the dup2 dir.
